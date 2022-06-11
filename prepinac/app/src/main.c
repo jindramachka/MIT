@@ -24,7 +24,7 @@ int akt_led = 0;
 void main(void)
 {
     GPIO_DeInit;
-    CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV8); // FREQ MCU 16MHz
+    CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV8); // FREQ MCU 2MHz
     GPIO_Init(GPIOB, GPIO_PIN_ALL, GPIO_MODE_OUT_PP_HIGH_SLOW);
     GPIO_Init(GPIOG, GPIO_PIN_ALL, GPIO_MODE_IN_PU_IT);
 
