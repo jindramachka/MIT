@@ -28,13 +28,16 @@ void main(void) {
     TIM4_TimeBaseInit(TIM4_PRESCALER_128, 255);
     TIM4_Cmd(ENABLE);
     // TIM4_Stav_ON = 1;
+    int n = 0;
 
     while (1) {
         if(TIM4_GetFlagStatus(TIM4_FLAG_UPDATE)==SET) {
             TIM4_ClearFlag(TIM4_FLAG_UPDATE);
+            n++;
+        }
+        if(n==60) {
+            n = 0;
             GPIO_WriteReverse(GPIOC, LED6);
-
-            
         }
     }
 }
